@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Resizer</title>
+    <!-- Добавление скрипта reCAPTCHA для отображения капчи -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfjdMEpAAAAAGl1maz1txad8oVIUJ8q7-mFiHjd"></script>
+</head>
+<body>
+<h1>Image Resizer</h1>
+<form method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <!-- Вставка поля капчи с указанием публичного ключа -->
+    <div class="g-recaptcha" data-sitekey="6LfjdMEpAAAAAGl1maz1txad8oVIUJ8q7-mFiHjd"></div>
+    {{ form.scale.label }} {{ form.scale(size=20) }}
+    {{ form.submit() }}
+</form>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+</body>
+</html>

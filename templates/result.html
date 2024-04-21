@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resize Result</title>
+</head>
+<body>
+<h1>Resize Result</h1>
+<h2>Original Image Colors</h2>
+<ul>
+{% for color in original %}
+    <li style="background-color: {{ color }}; width: 100px; height: 50px;">{{ color }}</li>
+{% endfor %}
+</ul>
+<h2>Resized Image Colors</h2>
+<ul>
+{% for color in resized %}
+    <li style="background-color: {{ color }}; width: 100px; height: 50px;">{{ color }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>

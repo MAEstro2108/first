@@ -1,0 +1,22 @@
+# Установка версии Python
+image: Visual Studio 2019
+
+# Настройки сборки
+build:
+  project: LAB1.py
+  publish_nuget: false
+
+# Сценарий сборки и тестирования
+test_script:
+  - pip install -r requirements.txt  # Установка зависимостей
+  # Нет тестов для запуска
+
+# Определение окружения
+environment:
+  matrix:
+    - PYTHON: "C:\\Python39"  # Путь к интерпретатору Python
+
+# Определение веток, для которых выполняется сборка
+branches:
+  only:
+    - master
